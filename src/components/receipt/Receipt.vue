@@ -1,21 +1,37 @@
 <template>
-    <div class="section">
+    <div class="section is-medium">
         <div class="container">
             <div class="receipt-container">
-                <hr>
-                <h2 class="title">Recibo</h2>
-                <div>
-                    <label for="">Fecha</label>
-                    <label for="" v-text="currentDate"></label>
-                </div>
-                <div>
-                    <label for="lblSerie">Serie</label>
-                    <label id="lblSerie" v-text="receiptSerie"></label>
-                </div>
-                <br>
-                <div class="columns is-centered">
+                <div class="columns is-centered is-multiline">
                     <div class="column is-narrow">
-                        <table class="table">
+                        <div >
+                            <h2 class="title">Orden </h2>
+                            <div class="field is-horizontal is-marginless">
+                                <div class="field-body">
+                                    <div class="field">
+                                        <label class="label" >Fecha: </label>
+                                    </div>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field has-text-right">
+                                        <label v-text="currentDate"></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field is-horizontal is-marginless">
+                                <div class="field-body">
+                                    <div class="field">
+                                        <label class="label" >Número: </label>
+                                    </div>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field has-text-right">
+                                        <label v-text="receiptNumber"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table is-striped">
                             <thead>
                                 <th title="Cantidad">Cantidad</th>
                                 <th title="Descripcion">Descripcion</th>
@@ -39,6 +55,20 @@
                                 </tr>
                             </tbody>
                         </table>
+                        <br>
+                            <div class="field is-horizontal is-marginless">
+                                <div class="field-body">
+                                    <div class="field  has-text-right">
+                                        <label class="label" >Recibido (f): </label>
+                                    </div>
+                                </div>
+                                <div class="field-body">
+                                    <div class="field">
+                                        <label class="label"> __________________________</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </br>
                     </div>
                 </div>
             </div>
@@ -81,7 +111,7 @@ export default {
               }
           ],
           total: 41,
-          receiptSerie: 'A15'
+          receiptNumber: '00000046'
       }
   }
 }
