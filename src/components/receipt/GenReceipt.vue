@@ -2,6 +2,11 @@
     <div class="column is-9">
         <div class="field is-horizontal">
             <div class="field-label is-normal">
+                <label for=""></label>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
                 <label class="label">Moneda</label>
             </div>
             <div class="field-body">
