@@ -1,40 +1,20 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Receipt from '@/components/receipt/Receipt'
-import GenReceipt from '@/components/receipt/GenReceipt'
 import Home from '@/components/Home'
-//Products
-import AddProduct from '@/components/product/AddProduct'
+import Router from 'vue-router'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
+  routes: [ 
     {
       path: '/',
       name: 'Home',
       component: Home
     },
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: Home
-    },
-    {
-      path: '/print-receipt',
-      name: 'Receipt',
-      component: Receipt
-    },
-    {
-      path: '/receipt',
-      name: 'GenReceipt',
-      component: GenReceipt
-    },
-    //Product
-    {
-      path:'/add-product',
-      name: 'AddProduct',
-      component: AddProduct
     }
   ]
 })
