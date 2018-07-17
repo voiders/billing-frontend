@@ -18,7 +18,7 @@
             <div class="control has-icons-left has-icons-right">
                 <input :class="['input',{'is-danger': errors.has('password')}]" type="password" placeholder="Password..." 
                     v-model="userPassword" name="password" required 
-                    v-validate="{required:tue, regex : /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/}">
+                    v-validate="{required:true, regex : /^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})/}">
                 <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                 </span>

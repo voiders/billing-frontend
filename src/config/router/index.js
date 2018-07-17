@@ -3,13 +3,16 @@ import Home from '@/components/Home'
 import Sign from '@/components/account/sign'
 //import ListProduct from '@/components/items/products/List'
 import AddProduct from '@/components/items/products/Add'
+import firebase from 'firebase/app';
+import 'firebase/auth';
 
-export default new VueRouter({
+let router = new VueRouter({
   mode: 'history',
   routes: [ 
     {
       path: '*',
-      redirect: '/'
+      redirect: '/',
+      requiresAuth: true
     },
     {
       path: '/',
@@ -33,4 +36,16 @@ export default new VueRouter({
       }
     }
   ]
+});
+
+router.beforeEach((from,to,next)=>{
+  const user = firebase.auth().currentUser;
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  console.log(user,requiresAuth)
+
+  if(requiresAuth && !user)next('sign')
+  else next()
 })
+
+export default router;
